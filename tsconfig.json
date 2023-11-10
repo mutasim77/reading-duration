@@ -1,25 +1,21 @@
 {
     "compilerOptions": {
-        "strict": true,
         "esModuleInterop": true,
-        "baseUrl": "./",
-        "module": "commonjs",
-        "declaration": true,
-        "moduleResolution": "node",
-        "types": [
-            "node"
+        "skipLibCheck": true,
+        "target": "es2022",
+        "allowJs": true,
+        "resolveJsonModule": true,
+        "moduleDetection": "force",
+        "strict": true,
+        "noUncheckedIndexedAccess": true,
+        "moduleResolution": "Bundler",
+        "module": "ESNext",
+        "noEmit": true,
+        /* If your code runs in the DOM: */
+        "lib": [
+            "es2022",
+            "dom",
+            "dom.iterable"
         ],
-        "paths": {
-            "reading-duration": [
-                "src/index"
-            ]
-        },
-    },
-    "include": [
-        "src/*.ts",
-        "test/*.ts"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+    }
 }
