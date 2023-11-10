@@ -5,7 +5,8 @@
   "main": "reading-duration.js",
   "types": "reading-duration.d.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
