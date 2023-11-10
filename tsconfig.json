@@ -3,6 +3,7 @@
         "strict": true,
         "esModuleInterop": true,
         "baseUrl": "./",
+        "outDir": "./",
         "module": "commonjs",
         "declaration": true,
         "moduleResolution": "node",
