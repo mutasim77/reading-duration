@@ -6,7 +6,7 @@ insightful glance at the commitment required.
 
 ## Installation 📦
 ```sh
-npm install reading-time
+npm install reading-duration
 ```
 
 ## Usage ⚙️
