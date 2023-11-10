@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import readingDuration from '../src/reading-duration';
+import readingDuration from '../src/index';
 
 describe('readingDuration()', () => {
     test('calculates reading time with longer text and default options', () => {
