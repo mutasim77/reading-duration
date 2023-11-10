@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "esModuleInterop": true,
+        "baseUrl": "./",
+        "module": "commonjs",
+        "declaration": true,
+        "moduleResolution": "node",
+        "types": [
+            "node"
+        ],
+        "paths": {
+            "reading-duration": [
+                "src/index"
+            ]
+        },
+    },
+    "include": [
+        "src/*.ts",
+        "test/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
