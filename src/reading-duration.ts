@@ -3,8 +3,10 @@
  * Copyright (c) Mutasim
  * MIT Licensed
 */
-
-import { ReadingOptions } from "./types";
+interface ReadingOptions {
+    wordsPerMinute?: number;
+    emoji?: boolean;
+}
 
 export default function readingDuration(htmlContent: string, options: ReadingOptions = {}): string {
     const { wordsPerMinute = 200, emoji = true } = options;
