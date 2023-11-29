@@ -5,7 +5,29 @@
 */
 interface ReadingOptions {
     wordsPerMinute?: number;
-    emoji?: boolean;
+    emoji?: boolean | string;
+}
+
+interface Emojis {
+    [index: string]: string;
+}
+
+const emojis: Emojis = {
+    hourglass_done: '⌛ ',
+    hourglass_not_done: '⏳ ',
+    stopwatch: '⏱ ',
+    clock: '🕒 ',
+    watch: '⌚ ',
+    timer: '⏲ ',
+    alarm: '⏰ ',
+    books: '📚 ',
+    open_book: '📖 ',
+    closed_book: '📕 ',
+    blue_book: '📘 ',
+    green_book: '📗 ',
+    orange_book: '📙 ',
+    notebook: '📓 ',
+    notebook_alt: '📔 ',
 }
 
 export default function readingDuration(htmlContent: string, options: ReadingOptions = {}): string {
@@ -24,5 +46,9 @@ export default function readingDuration(htmlContent: string, options: ReadingOpt
     // Round up to the nearest minute
     const readingTime = Math.ceil(minutes);
 
-    return `${emoji ? '⌛ ' : ''}${readingTime} min read`;
+    const emojiChoice = typeof emoji === 'string'
+        ? emojis[emoji]
+        : emoji ? '⌛ ' : ''
+
+    return `${emojiChoice}${readingTime} min read`;
 };
