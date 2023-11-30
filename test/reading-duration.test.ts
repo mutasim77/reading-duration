@@ -30,4 +30,259 @@ describe('readingDuration()', () => {
         const readingTime = readingDuration(htmlContent, options);
         expect(readingTime).toBe('1 min read');
     });
+
+    test('calculates reading time with hourglass_done emoji value and html content', () => {
+        const htmlContent = `
+            <h1>Welcome!</h1>
+            <h2>The Impact of Artificial Intelligence on Society 🤖</h2>
+            <p>Artificial Intelligence (AI) is transforming various aspects of our society...</p>
+            <!-- More HTML content -->
+        `;
+
+        const options = {
+            wordsPerMinute: 220,
+            emoji: 'hourglass_done',
+        };
+
+        const readingTime = readingDuration(htmlContent, options);
+        expect(readingTime).toBe('⌛ 1 min read');
+    });
+
+    test('calculates reading time with hourglass_not_done emoji value and html content', () => {
+        const htmlContent = `
+            <h1>Welcome!</h1>
+            <h2>The Impact of Artificial Intelligence on Society 🤖</h2>
+            <p>Artificial Intelligence (AI) is transforming various aspects of our society...</p>
+            <!-- More HTML content -->
+        `;
+
+        const options = {
+            wordsPerMinute: 220,
+            emoji: 'hourglass_not_done',
+        };
+
+        const readingTime = readingDuration(htmlContent, options);
+        expect(readingTime).toBe('⏳ 1 min read');
+    });
+
+    test('calculates reading time with stopwatch emoji value and html content', () => {
+        const htmlContent = `
+            <h1>Welcome!</h1>
+            <h2>The Impact of Artificial Intelligence on Society 🤖</h2>
+            <p>Artificial Intelligence (AI) is transforming various aspects of our society...</p>
+            <!-- More HTML content -->
+        `;
+
+        const options = {
+            wordsPerMinute: 220,
+            emoji: 'stopwatch',
+        };
+
+        const readingTime = readingDuration(htmlContent, options);
+        expect(readingTime).toBe('⏱ 1 min read');
+    });
+
+    test('calculates reading time with clock emoji value and html content', () => {
+        const htmlContent = `
+            <h1>Welcome!</h1>
+            <h2>The Impact of Artificial Intelligence on Society 🤖</h2>
+            <p>Artificial Intelligence (AI) is transforming various aspects of our society...</p>
+            <!-- More HTML content -->
+        `;
+
+        const options = {
+            wordsPerMinute: 220,
+            emoji: 'clock',
+        };
+
+        const readingTime = readingDuration(htmlContent, options);
+        expect(readingTime).toBe('🕒 1 min read');
+    });
+
+    test('calculates reading time with watch emoji value and html content', () => {
+        const htmlContent = `
+            <h1>Welcome!</h1>
+            <h2>The Impact of Artificial Intelligence on Society 🤖</h2>
+            <p>Artificial Intelligence (AI) is transforming various aspects of our society...</p>
+            <!-- More HTML content -->
+        `;
+
+        const options = {
+            wordsPerMinute: 220,
+            emoji: 'watch',
+        };
+
+        const readingTime = readingDuration(htmlContent, options);
+        expect(readingTime).toBe('⌚ 1 min read');
+    });
+
+    test('calculates reading time with timer emoji value and html content', () => {
+        const htmlContent = `
+            <h1>Welcome!</h1>
+            <h2>The Impact of Artificial Intelligence on Society 🤖</h2>
+            <p>Artificial Intelligence (AI) is transforming various aspects of our society...</p>
+            <!-- More HTML content -->
+        `;
+
+        const options = {
+            wordsPerMinute: 220,
+            emoji: 'timer',
+        };
+
+        const readingTime = readingDuration(htmlContent, options);
+        expect(readingTime).toBe('⏲ 1 min read');
+    });
+
+    test('calculates reading time with alarm emoji value and html content', () => {
+        const htmlContent = `
+            <h1>Welcome!</h1>
+            <h2>The Impact of Artificial Intelligence on Society 🤖</h2>
+            <p>Artificial Intelligence (AI) is transforming various aspects of our society...</p>
+            <!-- More HTML content -->
+        `;
+
+        const options = {
+            wordsPerMinute: 220,
+            emoji: 'alarm',
+        };
+
+        const readingTime = readingDuration(htmlContent, options);
+        expect(readingTime).toBe('⏰ 1 min read');
+    });
+
+    test('calculates reading time with books emoji value and html content', () => {
+        const htmlContent = `
+            <h1>Welcome!</h1>
+            <h2>The Impact of Artificial Intelligence on Society 🤖</h2>
+            <p>Artificial Intelligence (AI) is transforming various aspects of our society...</p>
+            <!-- More HTML content -->
+        `;
+
+        const options = {
+            wordsPerMinute: 220,
+            emoji: 'books',
+        };
+
+        const readingTime = readingDuration(htmlContent, options);
+        expect(readingTime).toBe('📚 1 min read');
+    });
+
+    test('calculates reading time with open_book emoji value and html content', () => {
+        const htmlContent = `
+            <h1>Welcome!</h1>
+            <h2>The Impact of Artificial Intelligence on Society 🤖</h2>
+            <p>Artificial Intelligence (AI) is transforming various aspects of our society...</p>
+            <!-- More HTML content -->
+        `;
+
+        const options = {
+            wordsPerMinute: 220,
+            emoji: 'open_book',
+        };
+
+        const readingTime = readingDuration(htmlContent, options);
+        expect(readingTime).toBe('📖 1 min read');
+    });
+
+    test('calculates reading time with closed_book emoji value and html content', () => {
+        const htmlContent = `
+            <h1>Welcome!</h1>
+            <h2>The Impact of Artificial Intelligence on Society 🤖</h2>
+            <p>Artificial Intelligence (AI) is transforming various aspects of our society...</p>
+            <!-- More HTML content -->
+        `;
+
+        const options = {
+            wordsPerMinute: 220,
+            emoji: 'closed_book',
+        };
+
+        const readingTime = readingDuration(htmlContent, options);
+        expect(readingTime).toBe('📕 1 min read');
+    });
+
+    test('calculates reading time with blue_book emoji value and html content', () => {
+        const htmlContent = `
+            <h1>Welcome!</h1>
+            <h2>The Impact of Artificial Intelligence on Society 🤖</h2>
+            <p>Artificial Intelligence (AI) is transforming various aspects of our society...</p>
+            <!-- More HTML content -->
+        `;
+
+        const options = {
+            wordsPerMinute: 220,
+            emoji: 'blue_book',
+        };
+
+        const readingTime = readingDuration(htmlContent, options);
+        expect(readingTime).toBe('📘 1 min read');
+    });
+
+    test('calculates reading time with green_book emoji value and html content', () => {
+        const htmlContent = `
+            <h1>Welcome!</h1>
+            <h2>The Impact of Artificial Intelligence on Society 🤖</h2>
+            <p>Artificial Intelligence (AI) is transforming various aspects of our society...</p>
+            <!-- More HTML content -->
+        `;
+
+        const options = {
+            wordsPerMinute: 220,
+            emoji: 'green_book',
+        };
+
+        const readingTime = readingDuration(htmlContent, options);
+        expect(readingTime).toBe('📗 1 min read');
+    });
+
+    test('calculates reading time with orange_book emoji value and html content', () => {
+        const htmlContent = `
+            <h1>Welcome!</h1>
+            <h2>The Impact of Artificial Intelligence on Society 🤖</h2>
+            <p>Artificial Intelligence (AI) is transforming various aspects of our society...</p>
+            <!-- More HTML content -->
+        `;
+
+        const options = {
+            wordsPerMinute: 220,
+            emoji: 'orange_book',
+        };
+
+        const readingTime = readingDuration(htmlContent, options);
+        expect(readingTime).toBe('📙 1 min read');
+    });
+
+    test('calculates reading time with notebook emoji value and html content', () => {
+        const htmlContent = `
+            <h1>Welcome!</h1>
+            <h2>The Impact of Artificial Intelligence on Society 🤖</h2>
+            <p>Artificial Intelligence (AI) is transforming various aspects of our society...</p>
+            <!-- More HTML content -->
+        `;
+
+        const options = {
+            wordsPerMinute: 220,
+            emoji: 'notebook',
+        };
+
+        const readingTime = readingDuration(htmlContent, options);
+        expect(readingTime).toBe('📓 1 min read');
+    });
+
+    test('calculates reading time with notebook_alt emoji value and html content', () => {
+        const htmlContent = `
+            <h1>Welcome!</h1>
+            <h2>The Impact of Artificial Intelligence on Society 🤖</h2>
+            <p>Artificial Intelligence (AI) is transforming various aspects of our society...</p>
+            <!-- More HTML content -->
+        `;
+
+        const options = {
+            wordsPerMinute: 220,
+            emoji: 'notebook_alt',
+        };
+
+        const readingTime = readingDuration(htmlContent, options);
+        expect(readingTime).toBe('📔 1 min read');
+    });
 });

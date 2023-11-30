@@ -45,7 +45,25 @@ console.log(readingTime); // => '1 min read'
 - **htmlContent** (string): The HTML content of your blog post or article.
 - **options** (optional): An object with the following optional properties:
   - **wordsPerMinute** (number, default: 200): The average words per minute read rate.
-  - **emoji** (boolean, default: true): Whether to include an emoji in the output.
+  - **emoji** (boolean | string, default: true): Whether to include an emoji in the output.
+    - Possible emoji values:
+      - true: '⌛ '
+      - false: no emoji
+      - hourglass_done: '⌛ '
+      - hourglass_not_done: '⏳ '
+      - stopwatch: '⏱ '
+      - clock: '🕒 '
+      - watch: '⌚ '
+      - timer: '⏲ '
+      - alarm: '⏰ '
+      - books: '📚 '
+      - open_book: '📖 '
+      - closed_book: '📕 '
+      - blue_book: '📘 '
+      - green_book: '📗 '
+      - orange_book: '📙 '
+      - notebook: '📓 '
+      - notebook_alt: '📔 '
 
 **_Returns_**
 
