@@ -34,7 +34,14 @@ export default function readingDuration(htmlContent: string, options: ReadingOpt
     const { wordsPerMinute = 200, emoji = true } = options;
 
     // Remove HTML tags (e.g., if text was converted from Markdown)
-    const plainText = htmlContent.replace(/<[^>]*>/g, '');
+    const plainText = htmlContent
+        // Remove <code> elements
+        .replace(/<code>.*?<\/code>/gs, '')
+        // Remove code blocks in Markdown (e.g., ```js ... ```)
+        .replace(/```[^`]+```/gs, '')
+        // Remove other HTML tags
+        .replace(/<[^>]*>/g, '');
+
     const words = plainText.split(/\s+/).length;
 
     /*! 
@@ -48,7 +55,8 @@ export default function readingDuration(htmlContent: string, options: ReadingOpt
 
     const emojiChoice = typeof emoji === 'string'
         ? emojis[emoji]
-        : emoji ? '⌛ ' : ''
+        : emoji ? '⌛ ' : '';
 
     return `${emojiChoice}${readingTime} min read`;
 };
+
